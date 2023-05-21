@@ -145,4 +145,23 @@ function game() {
     // call playRound, updating score with each round
     // when either score reaches 3, exit the loop (will exit after 5 rounds if this doesn't happen)
     // report the winner based on the higher score (or a tie if scores are identical)
+
+    let playerScore = 0, computerScore = 0;
+
+    playerSelection = "rock"    // placeholder
+
+    for(let i = 0; i < 5; i++) {
+        let playerWon = playRound(playerSelection, computerSelection);
+        if(playerWon === true) {
+            playerScore++;
+        } else if(playerWon === false){
+            computerScore++;
+        }
+
+        if((playerScore >= 3) || (computerScore >= 3)) {
+            i = 5;
+        }
+    }
+
+    
 }
