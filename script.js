@@ -163,5 +163,11 @@ function game() {
         }
     }
 
-    
+    if(playerScore === computerScore) {
+        console.log(`It's a Tie! Score is ${playerScore}-${computerScore}`);
+    } else if(playerScore > computerScore) {
+        console.log(`You Win! Score is ${playerScore}-${computerScore}`);
+    } else {
+        console.log(`You Lose! Score is ${playerScore}-${computerScore}`);
+    }
 }
