@@ -148,7 +148,7 @@ function game() {
 
     let playerScore = 0, computerScore = 0;
 
-    playerSelection = "rock"    // placeholder
+    let playerSelection = prompt("Enter your move...", "Rock, Paper or Scissors");
 
     for(let i = 0; i < 5; i++) {
         let playerWon = playRound(playerSelection, computerSelection);
