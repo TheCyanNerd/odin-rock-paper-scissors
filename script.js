@@ -1,5 +1,7 @@
 console.log("Hello World!");
 
+
+
 // getComputerChoice generates a random number between 0 and 2 (inclusive) and returns a string indicating a move
 
 // getComputerChoice() --> string
@@ -30,3 +32,16 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
+
+
+
+// playRound takes two parameters - playerSelection and computerSelection - and returns a string that declares the winner of the round
+
+// playRound(string playerSelection, string computerSelection) --> string
+
+//  Rock beats Scissors
+//  Scissors beats Paper
+//  Paper beats Rock
+
+// Note: playerSelection should be handled case-insensitively
+
