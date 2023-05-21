@@ -12,21 +12,19 @@ console.log("Hello World!");
 //  call Math.random() to generate a random number b/n 0 and 1
 //  multiply the result by 2 to get a   ""    ""    "" "" "" 2
 //  store that result in randNum
-//  create a variable called choiceStr
-//  use randNum's value to pick the correct choice to store in choiceStr
-//  return choiceStr
+//  use randNum's value to decide what move to return
 
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 3);
-    let choiceStr;
     if(randNum === 0) {
-        choiceStr = "Rock";
+        return "Rock";
     } else if(randNum === 1) {
-        choiceStr = "Paper";
+        return "Paper";
     } else if(randNum === 2) {
-        choiceStr = "Scissors";
+        return "Scissors";
+    } else {
+        return undefined;
     }
-    return choiceStr;
 }
 
 console.log(getComputerChoice());
