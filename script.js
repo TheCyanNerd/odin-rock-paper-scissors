@@ -19,8 +19,8 @@ console.log("Hello World!");
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 3);
     let choiceStr;
-    if(true) {
-
+    if(randNum === 0) {
+        choiceStr = "Rock";
     }
     return choiceStr;
 }
