@@ -18,7 +18,11 @@ console.log("Hello World!");
 
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 3);
-    return randNum;
+    let choiceStr;
+    if(true) {
+
+    }
+    return choiceStr;
 }
 
 console.log(getComputerChoice());
