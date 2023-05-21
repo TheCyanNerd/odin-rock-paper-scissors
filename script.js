@@ -53,6 +53,12 @@ function playRound(playerSelection, computerSelection) {
     // generate winMessage as: "You Lose!" or "You Win!" depending on value of playerWin
     // generate beatMessage as: `${winner's selection} beats ${loser's selection}`
     // return concatenation of winMessage and beatMessage
+
+    let playerWin;
+    let winMessage = "", beatMessage = "";
+
+    
+    return winMessage + " " + beatMessage;
 }
 
 const playerSelection = "rock";
