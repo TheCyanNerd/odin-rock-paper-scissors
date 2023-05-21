@@ -19,3 +19,7 @@ console.log("Hello World!");
 function getComputerChoice() {
     let randNum = Math.random() * 2;
 }
+
+console.log(getComputerChoice());
+console.log(getComputerChoice());
+console.log(getComputerChoice());
