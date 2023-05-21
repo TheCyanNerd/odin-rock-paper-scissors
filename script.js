@@ -62,8 +62,17 @@ function playRound(playerSelection, computerSelection) {
 
     if(playerSelection === computerSelection) {
         // tie
+    } else {
+        playerWin = calcWinner(playerSelection, computerSelection);
     }
 
+    if(playerWin === true) {
+        winMessage = "You Win!";
+    } else {
+        winMessage = "You Lose!";
+    }
+
+    
     
     return winMessage + " " + beatMessage;
 }
