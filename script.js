@@ -78,8 +78,37 @@ console.log(playRound(playerSelection, computerSelection));
 
 // calcWinner(selectionA, selectionB) --> boolean
 
-// Note: not meant to be called on pairs of selections that could result in a tie. If done anyways, this will return [FIXME].
+// Note: not meant to distinguish between pairs of selections that could result in a tie and wins. If done anyways, a tied input will output false.
 
+function calcWinner(selectionA, selectionB) {
+    if(selectionA === "Rock") {
+        if(selectionB === "Scissors") {
+            return true;
+        } else {
+            return false;
+        }
+    } else if(selectionA === "Paper") {
+        if(selectionB === "Rock") {
+            return true;
+        } else {
+            return false;
+        }
+    } else if(selectionA === "Scissors") {
+        if(selectionB === "Paper") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
+// expected: true, false, false, true, true, false
+
+console.log(calcWinner("Rock", "Scissors"));
+console.log(calcWinner("Rock", "Paper"));
+console.log(calcWinner("Scissors", "Rock"));
+console.log(calcWinner("Scissors", "Paper"));
+console.log(calcWinner("Paper", "Rock"));
+console.log(calcWinner("Paper", "Scissors"));
 
 
