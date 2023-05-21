@@ -129,3 +129,17 @@ console.log(calcWinner("Paper", "Rock"));
 console.log(calcWinner("Paper", "Scissors"));
 
 
+
+// game calls playRound to play a 5-round game, keeping score and reporting a winner or loser at the end
+
+// game() --> void
+
+// Note: uses a for loop, which has not been covered in TOP yet (but I know from other courses)
+
+function game() {
+    // declare variables to hold player and computer scores
+    // get player's choice as input from the user
+    // call playRound, updating score with each round
+    // when either score reaches 3, exit the loop
+    // report the winner based on the higher score
+}
