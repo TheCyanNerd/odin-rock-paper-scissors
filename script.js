@@ -148,10 +148,9 @@ function game() {
 
     let playerScore = 0, computerScore = 0;
 
-    let playerSelection = prompt("Enter your move...", "Rock, Paper or Scissors");
-
     for(let i = 0; i < 5; i++) {
-        let playerWon = playRound(playerSelection, computerSelection);
+        let playerSelection = prompt("Enter your move...", "Rock, Paper or Scissors");
+        let playerWon = playRound(playerSelection, getComputerChoice());
         if(playerWon === true) {
             playerScore++;
         } else if(playerWon === false){
@@ -171,3 +170,5 @@ function game() {
         console.log(`You Lose! Score is ${playerScore}-${computerScore}`);
     }
 }
+
+game();
