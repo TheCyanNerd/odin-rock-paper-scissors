@@ -55,24 +55,32 @@ function playRound(playerSelection, computerSelection) {
     // generate beatMessage as: `${winner's selection} beats ${loser's selection}`, or as `{selection} ties with {selection}`
     // return concatenation of winMessage and beatMessage
 
-    let playerWin, roundTie;
+    let playerWin, roundTie = false;
     let winMessage = "", beatMessage = "";
 
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 
     if(playerSelection === computerSelection) {
-        // tie
+        roundTie = true;
     } else {
         playerWin = calcWinner(playerSelection, computerSelection);
     }
-
-    if(playerWin === true) {
-        winMessage = "You Win!";
+    
+    if(roundTie === true) {
+        winMessage = "It's a Tie!";
     } else {
-        winMessage = "You Lose!";
+        if(playerWin === true) {
+            winMessage = "You Win!";
+        } else {
+            winMessage = "You Lose!";
+        }
     }
 
-    beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? computerSelection : playerSelection}`;
+    if(roundTie === true) {
+        beatMessage = `${playerSelection} ties with ${computerSelection}`;
+    } else {
+        beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? computerSelection : playerSelection}`;
+    }
     
     return winMessage + " " + beatMessage;
 }
