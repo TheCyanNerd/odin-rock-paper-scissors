@@ -21,6 +21,10 @@ function getComputerChoice() {
     let choiceStr;
     if(randNum === 0) {
         choiceStr = "Rock";
+    } else if(randNum === 1) {
+        choiceStr = "Paper";
+    } else if(randNum === 2) {
+        choiceStr = "Scissors";
     }
     return choiceStr;
 }
