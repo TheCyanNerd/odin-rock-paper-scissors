@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection) {
     // generate beatMessage as: `${winner's selection} beats ${loser's selection}`, or as `{selection} ties with {selection}`
     // return concatenation of winMessage and beatMessage
 
-    let playerWin;
+    let playerWin, roundTie;
     let winMessage = "", beatMessage = "";
 
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
@@ -71,3 +71,15 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+
+
+
+// calcWinner takes two parameters, selectionA and selectionB, and returns true if selectionA beats selectionB, and false otherwise
+
+// calcWinner(selectionA, selectionB) --> boolean
+
+// Note: not meant to be called on pairs of selections that could result in a tie. If done anyways, this will return [FIXME].
+
+
+
+
