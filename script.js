@@ -1,6 +1,4 @@
-console.log("Hello World!");
-
-
+game();
 
 // getComputerChoice generates a random number between 0 and 2 (inclusive) and returns a string indicating a move
 
@@ -29,9 +27,11 @@ function getComputerChoice() {
     }
 }
 
+/*
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
+*/
 
 
 
@@ -88,9 +88,11 @@ function playRound(playerSelection, computerSelection) {
     return playerWin;
 }
 
+/*
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+*/
 
 
 
@@ -124,12 +126,14 @@ function calcWinner(selectionA, selectionB) {
 
 // expected: true, false, false, true, true, false
 
+/*
 console.log(calcWinner("Rock", "Scissors"));
 console.log(calcWinner("Rock", "Paper"));
 console.log(calcWinner("Scissors", "Rock"));
 console.log(calcWinner("Scissors", "Paper"));
 console.log(calcWinner("Paper", "Rock"));
 console.log(calcWinner("Paper", "Scissors"));
+*/
 
 
 
@@ -170,5 +174,3 @@ function game() {
         console.log(`You lose the game! Score is ${playerScore}-${computerScore}`);
     }
 }
-
-game();
