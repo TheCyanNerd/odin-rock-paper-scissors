@@ -46,7 +46,13 @@ console.log(getComputerChoice());
 // Note: playerSelection should be handled case-insensitively
 
 function playRound(playerSelection, computerSelection) {
-
+    // declare a boolean playerWin and strings winMessage, beatMessage
+    // make playerSelection the same case as computerSelection (or make them both the same case as values we'll compare to)
+    // compare playerSelection and computerSelection to determine who won
+    // if the player won, set playerWin to true, otherwise set it to false
+    // generate winMessage as: "You Lose!" or "You Win!" depending on value of playerWin
+    // generate beatMessage as: `${winner's selection} beats ${loser's selection}`
+    // return concatenation of winMessage and beatMessage
 }
 
 const playerSelection = "rock";
