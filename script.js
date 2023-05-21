@@ -35,9 +35,9 @@ console.log(getComputerChoice());
 
 
 
-// playRound takes two parameters - playerSelection and computerSelection - and returns a string that declares the winner of the round
+// playRound takes two parameters - playerSelection and computerSelection - and returns true if the player won, false if the computer won, and undefined if there's a tie
 
-// playRound(string playerSelection, string computerSelection) --> string
+// playRound(string playerSelection, string computerSelection) --> boolean
 
 //  Rock beats Scissors
 //  Scissors beats Paper
@@ -53,7 +53,8 @@ function playRound(playerSelection, computerSelection) {
     // if we get a tie, set roundTie to true
     // generate winMessage as: "You Lose!" or "You Win!" depending on value of playerWin, or to "It's a Tie!" depending on value of roundTie (overrides value of playerWin)
     // generate beatMessage as: `${winner's selection} beats ${loser's selection}`, or as `{selection} ties with {selection}`
-    // return concatenation of winMessage and beatMessage
+    // log concatenation of winMessage and beatMessage
+    // return playerWin
 
     let playerWin, roundTie = false;
     let winMessage = "", beatMessage = "";
@@ -82,7 +83,9 @@ function playRound(playerSelection, computerSelection) {
         beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? computerSelection : playerSelection}`;
     }
     
-    return winMessage + " " + beatMessage;
+    console.log(winMessage + " " + beatMessage);
+
+    return playerWin;
 }
 
 const playerSelection = "rock";
@@ -140,6 +143,6 @@ function game() {
     // declare variables to hold player and computer scores
     // get player's choice as input from the user
     // call playRound, updating score with each round
-    // when either score reaches 3, exit the loop
-    // report the winner based on the higher score
+    // when either score reaches 3, exit the loop (will exit after 5 rounds if this doesn't happen)
+    // report the winner based on the higher score (or a tie if scores are identical)
 }
