@@ -72,7 +72,7 @@ function playRound(playerSelection, computerSelection) {
         winMessage = "You Lose!";
     }
 
-    
+    beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? playerSelection : computerSelection}`;
     
     return winMessage + " " + beatMessage;
 }
