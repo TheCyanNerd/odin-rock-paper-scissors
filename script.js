@@ -17,5 +17,5 @@ console.log("Hello World!");
 //  return choiceStr
 
 function getComputerChoice() {
-
+    let randNum = Math.random() * 2;
 }
