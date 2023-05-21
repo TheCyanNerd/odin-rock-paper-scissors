@@ -57,6 +57,8 @@ function playRound(playerSelection, computerSelection) {
     let playerWin;
     let winMessage = "", beatMessage = "";
 
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+
     
     return winMessage + " " + beatMessage;
 }
