@@ -2,6 +2,8 @@ console.log("Hello World!");
 
 // getComputerChoice generates a random number between 0 and 2 (inclusive) and returns a string indicating a move
 
+// getComputerChoice() --> string
+
 //      0 = Rock
 //      1 = Paper
 //      2 = Scissors
@@ -14,3 +16,6 @@ console.log("Hello World!");
 //  use randNum's value to pick the correct choice to store in choiceStr
 //  return choiceStr
 
+function getComputerChoice() {
+
+}
