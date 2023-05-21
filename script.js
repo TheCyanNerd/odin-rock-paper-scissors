@@ -50,14 +50,19 @@ function playRound(playerSelection, computerSelection) {
     // make playerSelection the same case as computerSelection (or make them both the same case as values we'll compare to)
     // compare playerSelection and computerSelection to determine who won
     // if the player won, set playerWin to true, otherwise set it to false
-    // generate winMessage as: "You Lose!" or "You Win!" depending on value of playerWin
-    // generate beatMessage as: `${winner's selection} beats ${loser's selection}`
+    // if we get a tie, set roundTie to true
+    // generate winMessage as: "You Lose!" or "You Win!" depending on value of playerWin, or to "It's a Tie!" depending on value of roundTie (overrides value of playerWin)
+    // generate beatMessage as: `${winner's selection} beats ${loser's selection}`, or as `{selection} ties with {selection}`
     // return concatenation of winMessage and beatMessage
 
     let playerWin;
     let winMessage = "", beatMessage = "";
 
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+
+    if(playerSelection === computerSelection) {
+        // tie
+    }
 
     
     return winMessage + " " + beatMessage;
