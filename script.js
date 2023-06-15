@@ -1,4 +1,3 @@
-game();
 
 // getComputerChoice generates a random number between 0 and 2 (inclusive) and returns a string indicating a move
 
@@ -56,36 +55,49 @@ function playRound(playerSelection, computerSelection) {
     // log concatenation of winMessage and beatMessage
     // return playerWin
 
-    let playerWin, roundTie = false;
-    let winMessage = "", beatMessage = "";
-
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-
-    if(playerSelection === computerSelection) {
-        roundTie = true;
-    } else {
-        playerWin = calcWinner(playerSelection, computerSelection);
-    }
+    if((playerScore < 5) && (computerScore < 5)) {
+        let playerWin, roundTie = false;
+        let winMessage = "", beatMessage = "";
     
-    if(roundTie === true) {
-        winMessage = "It's a Tie!";
-    } else {
-        if(playerWin === true) {
-            winMessage = "You Win!";
+        playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+    
+        if(playerSelection === computerSelection) {
+            roundTie = true;
         } else {
-            winMessage = "You Lose!";
+            playerWin = calcWinner(playerSelection, computerSelection);
         }
-    }
-
-    if(roundTie === true) {
-        beatMessage = `${playerSelection} ties with ${computerSelection}`;
-    } else {
-        beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? computerSelection : playerSelection}`;
+        
+        if(roundTie === true) {
+            winMessage = "It's a Tie!";
+        } else {
+            if(playerWin === true) {
+                winMessage = "You Win!";
+                playerScore++;
+            } else {
+                winMessage = "You Lose!";
+                computerScore++;
+            }
+        }
+    
+        if(roundTie === true) {
+            beatMessage = `${playerSelection} ties with ${computerSelection}`;
+        } else {
+            beatMessage = `${playerWin ? playerSelection : computerSelection} beats ${playerWin ? computerSelection : playerSelection}`;
+        }
+        
+        const result = document.querySelector('#result');
+        result.textContent = winMessage + " " + beatMessage;
+    
+        const score = document.querySelector('#score');
+        score.textContent = `You: ${playerScore} | Computer: ${computerScore}`;
     }
     
-    console.log(winMessage + " " + beatMessage);
+    if(playerScore == 5) {
+        score.textContent = (`You win the game! Score was ${playerScore}-${computerScore}`);
+    } else if(computerScore == 5) {
+        score.textContent = (`Computer wins the game! Score was ${playerScore}-${computerScore}`);
+    }
 
-    return playerWin;
 }
 
 /*
@@ -137,40 +149,11 @@ console.log(calcWinner("Paper", "Scissors"));
 
 
 
-// game calls playRound to play a 5-round game, keeping score and reporting a winner or loser at the end
+let playerScore = 0, computerScore = 0;
 
-// game() --> void
-
-// Note: uses a for loop, which has not been covered in TOP yet (but I know from other courses)
-
-function game() {
-    // declare variables to hold player and computer scores
-    // get player's choice as input from the user
-    // call playRound, updating score with each round
-    // when either score reaches 3, exit the loop (will exit after 5 rounds if this doesn't happen)
-    // report the winner based on the higher score (or a tie if scores are identical)
-
-    let playerScore = 0, computerScore = 0;
-
-    for(let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Enter your move...", "Rock, Paper or Scissors");
-        let playerWon = playRound(playerSelection, getComputerChoice());
-        if(playerWon === true) {
-            playerScore++;
-        } else if(playerWon === false){
-            computerScore++;
-        }
-
-        if((playerScore >= 3) || (computerScore >= 3)) {
-            i = 5;
-        }
-    }
-
-    if(playerScore === computerScore) {
-        console.log(`The game is a tie! Score is ${playerScore}-${computerScore}`);
-    } else if(playerScore > computerScore) {
-        console.log(`You win the game! Score is ${playerScore}-${computerScore}`);
-    } else {
-        console.log(`You lose the game! Score is ${playerScore}-${computerScore}`);
-    }
-}
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => { 
+    button.addEventListener('click', () => {
+        playRound(button.innerText, getComputerChoice());
+    });
+});
